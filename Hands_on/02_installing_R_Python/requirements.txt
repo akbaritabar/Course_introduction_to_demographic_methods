@@ -1,0 +1,13 @@
+# for data wrangling
+pandas
+tabulate
+# to read parquet files using pandas
+pyarrow
+# a very fast dataframe library similar to pandas
+polars
+# for parallelization and in-memory database
+duckdb
+# Lightweight IDE to use with Python
+jupyterlab
+# for visualization
+plotnine

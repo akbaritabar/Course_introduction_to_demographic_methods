@@ -1,0 +1,31 @@
+# Course Introduction to Demographic Methods, summer semester 2026
+Materials, slides, hands-on code and assignments for for the course "Introduction to Demographic Methods" for the 2026 edition.
+
+Here is the folder structure and what to expect:
+
+- Root folder
+    - This ReadMe.md text file
+    - File named ".gitignore" is very important and described how it works in the slides of the week on introduction.
+- Slides_PDF
+    - Slides for each week named as "01_xx", "02_xy" etc. Course's syllabus is also included here.
+- Hands_on
+    - Here you find the instructions and example code for each week. See the slides for a description of what is included for each week.
+- ZZZ_Final_examination
+    - Here you can find instructions and guidelines regarding course's final exam, dates, how to hand-in materials etc.
+
+# What to do before the next session?
+
+![TODO_before_the_next_session.png](TODO_before_the_next_session.png)
+
+# Important announcements
+Here I will copy announcements (that are shared by email or posted on Stud.IP) so that everyone is informed about them.
+
+# Course's final examination and assignment
+
+Dear everyone, please see the guidelines about course's final examination here [./ZZZ_Final_examination/ReadMe.md](./ZZZ_Final_examination/ReadMe.md) .
+
+An example essay from my other course in the last semester is also included for your information.
+
+## List of topics for the final examination
+
+Please see here [./ZZZ_Final_examination/ReadMe.md](./ZZZ_Final_examination/ReadMe.md) the guidelines for final examination where I have now added the list of topics from which you can select one for your final essay and presentation.
