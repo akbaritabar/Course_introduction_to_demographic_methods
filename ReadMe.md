@@ -26,7 +26,7 @@ Dear Everyone,
 
 As in the previous courses, I am sharing the course materials using a GitHub repository. This helps us practice reproducibility, Git, GitHub, and version control in our course.
 
-To add you, I need you to go to [https://github.com/](https://github.com/) and sign up. Then, send me an email sharing your GitHub username and I will add you. After this step, you will receive an email from GitHub with a link to join.
+To add you, I need you to go to [https://github.com/](https://github.com/) and sign up. Then, send me an email sharing your `GitHub username` and I will add you to the repository. After this step, you will receive an email from GitHub with a link to join.
 
 If you missed our course's first sessions, I have prepared an interactive, self-paced course on the basics of Git, GitHub, and version control. Go here and follow the instructions, as we will not cover these after the first few sessions. We will be using the concepts and tools introduced there throughout the semester: [https://github.com/akbaritabar/Git-GitHub-Version-Control-Interactive-Self-paced-Course](https://github.com/akbaritabar/Git-GitHub-Version-Control-Interactive-Self-paced-Course)
 
