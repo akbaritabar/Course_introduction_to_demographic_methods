@@ -1,5 +1,5 @@
 # Course Introduction to Demographic Methods, summer semester 2026
-Materials, slides, hands-on code and assignments for for the course "Introduction to Demographic Methods" for the 2026 edition.
+Materials, slides, hands-on code and assignments for the course "Introduction to Demographic Methods" for the 2026 edition.
 
 Here is the folder structure and what to expect:
 
@@ -19,6 +19,20 @@ Here is the folder structure and what to expect:
 
 # Important announcements
 Here I will copy announcements (that are shared by email or posted on Stud.IP) so that everyone is informed about them.
+
+## 20260423 Access to course materials and basics of Git, GitHub, and version control
+
+Dear Everyone,
+
+As in the previous courses, I am sharing the course materials using a GitHub repository. This helps us practice reproducibility, Git, GitHub, and version control in our course.
+
+To add you, I need you to go to [https://github.com/](https://github.com/) and sign up. Then, send me an email sharing your GitHub username and I will add you. After this step, you will receive an email from GitHub with a link to join.
+
+If you missed our course's first sessions, I have prepared an interactive, self-paced course on the basics of Git, GitHub, and version control. Go here and follow the instructions, as we will not cover these after the first few sessions. We will be using the concepts and tools introduced there throughout the semester: [https://github.com/akbaritabar/Git-GitHub-Version-Control-Interactive-Self-paced-Course](https://github.com/akbaritabar/Git-GitHub-Version-Control-Interactive-Self-paced-Course)
+
+Best,
+Akbaritabar
+
 
 # Course's final examination and assignment
 

@@ -6,35 +6,10 @@ Legend:
 - ?: Will check/add next week.
 
 
-| Row | First_name      | Last_name  | 09/04/26 | 16/04/26 | 23/04/26 | 30/04/26 | 07/05/26 | 21/05/26 | 04/06/26 | 11/06/26 | 18/06/26 | 25/06/26 | 02/07/26 | 09/07/26 | 16/07/26 |  |
-| :-------------- | :-------------- | :--------- | :------- | :------- | :------- | :-------- | :------- | :------- | :------- | :-------- | :--------- | :------- | :------- | :------- | :------- | :------- |
-| 1 | Nouria        | Adam   | P         | ?         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 2 | Annamaria Angelika          | Bauer   | P         | ?         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 3 | Sarah           | Becker     | P         | ?         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 4 | Svea Paula  | Bohm     | P         | E         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 5 | Dorothea           | Buchholz | P         | P         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 6 | Justin             | Ernst      | A         | ?         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 7 | Kira-Emily           | Heinrich       | P         | ?         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 8 | Christin          | Heitmann  | P         | P         |           |            |           |           |           |            |             |           |           |           |           |           |
-| 9 | Noemi                | Herman           | P         | ?         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 10 | Nicole                | Huynh           | P         | A         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 11 | Anna                | Leicht           | A         | ?         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 12 | Svenja                | Lorenz           | P         | ?         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 13 | Anna Lena Marie               | Rother           | P         | P         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 14 | Leandra                | Schoch           | P         | P         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 15 | Thea                | Stein           | P         | ?         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 16 | Leandra Annie-Rose                | Wagner           | P         | P         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 17 | Antonio                | Weyer           | P         | P         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 18 | Helena                | Wienefeld           | P         | A         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 19 | Jaqueline                | Witt           | E         | P         |          |           |          |          |          |           |            |          |          |          |          |          |
-| 20 |                 |            |          |          |          |           |          |          |          |           |            |          |          |          |          |          |
-| 21 |                 |            |          |          |          |           |          |          |          |           |            |          |          |          |          |          |
-| 22 |                 |            |          |          |          |           |          |          |          |           |            |          |          |          |          |          |
-| 23 |                 |            |          |          |          |           |          |          |          |           |            |          |          |          |          |          |
+**NOTE** Presence sheet is moved to Stud.IP, please find it there.
 
 
-<!-- 
-# Empty to use in new semester
+# Course schedule
 
 
 | First_name | Last_name | 09/04/26 | 16/04/26 | 23/04/26 | 30/04/26 | 07/05/26 | 21/05/26 | 04/06/26 | 11/06/26 | 18/06/26 | 25/06/26 | 02/07/26 | 09/07/26 | 16/07/26 |      |
@@ -48,4 +23,4 @@ Legend:
 |            |           |          |          |          |          |          |          |          |          |          |          |          |          |          |      |
 |            |           |          |          |          |          |          |          |          |          |          |          |          |          |          |      |
 |            |           |          |          |          |          |          |          |          |          |          |          |          |          |          |      |
- -->
+
