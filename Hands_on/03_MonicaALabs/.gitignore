@@ -1,0 +1,12 @@
+*.DS_Store
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+data/WPP2024_POP*
+data/WPP2024_Fertility*
+data/WPP2024_Life*
+data/WPP2024_MORT_F06_3_SINGLE_AGE_LIFE_TABLE_ESTIMATES_FEMALE*
+data/WPP2024_FERT*
+.positai
+renv/*

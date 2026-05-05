@@ -1,0 +1,331 @@
+---
+title: "Week 1: Intro to demographic concepts"
+subtitle: "SOC6708 ADA"
+author: "Monica Alexander"
+format: pdf
+execute: 
+  warning: false
+---
+
+# Read in the data 
+All these data come from the [UN World Population Prospects 2024](https://population.un.org/wpp/).
+
+Packages:
+```{r}
+# in the root of the project, i.e., "/Hands_on/03_MonicaALabs/" folder where "03_MonicaALabs.Rproj" is located, open it and, do `renv::init()`
+library(tidyverse)
+library(here)
+library(readxl)
+library(janitor)
+```
+
+Population data:
+```{r}
+d_male <- read_xlsx("../data/WPP2024_POP_F01_2_POPULATION_SINGLE_AGE_MALE.xlsx", skip = 16, col_types = "text") |>
+  mutate(Year = as.numeric(Year))
+d_male$sex <- "Male"
+d_male <- d_male |> drop_na(Year)
+d_female <- read_xlsx("../data/WPP2024_POP_F01_3_POPULATION_SINGLE_AGE_FEMALE.xlsx", skip = 16, col_types = "text") |>
+  mutate(Year = as.numeric(Year))
+d_female$sex <- "Female"
+d_female <- d_female |> drop_na(Year)
+
+d <- rbind(d_male, d_female)
+rm(d_male, d_female)
+
+d <- d  |> 
+  clean_names() |> 
+  select(region_subregion_country_or_area, iso3_alpha_code, year, x0:sex) |> 
+  rename(region = region_subregion_country_or_area) |> 
+  mutate(across(x0:x100, as.numeric))
+
+head(d)
+```
+
+Mortality data:
+
+```{r}
+d_male <- read_xlsx(here("data/WPP2024_MORT_F01_2_DEATHS_SINGLE_AGE_MALE.xlsx"), skip = 16, col_types = "text") |>
+  mutate(Year = as.numeric(Year))
+d_male$sex <- "Male"
+d_male <- d_male |> drop_na(Year)
+d_female <- read_xlsx(here("data/WPP2024_MORT_F01_3_DEATHS_SINGLE_AGE_FEMALE.xlsx"), skip = 16, col_types = "text") |>
+  mutate(Year = as.numeric(Year))
+d_female$sex <- "Female"
+d_female <- d_female |> drop_na(Year)
+
+dm <- rbind(d_male, d_female)
+rm(d_male, d_female)
+
+dm <- dm  |> 
+  clean_names() |> 
+  select(region_subregion_country_or_area, iso3_alpha_code, year, x0:sex) |> 
+  rename(region = region_subregion_country_or_area) |> 
+  mutate(across(x0:x100, as.numeric))
+
+head(dm)
+
+```
+
+# Crude Rates
+
+Calculate the crude death rates for Kenya and Canada in 2023
+
+```{r}
+# get total populations across all age and sex
+total_pops <- d  |>  
+  filter(region=="Kenya"|region=="Canada") |> 
+  pivot_longer(x0:x100, names_to = "age", values_to = "pop") |> 
+  mutate(age = as.numeric(str_remove(age, "x"))) |> 
+  group_by(region, year) |> 
+  summarize(total_pop = sum(pop))
+
+# get total deaths 
+
+total_deaths <- dm  |>  
+  filter(region=="Kenya"|region=="Canada") |> 
+  pivot_longer(x0:x100, names_to = "age", values_to = "deaths") |> 
+  mutate(age = as.numeric(str_remove(age, "x"))) |> 
+  group_by(region, year) |> 
+  summarize(total_deaths = sum(deaths))
+
+# join these
+
+total_pops |> 
+  left_join(total_deaths) |> 
+  mutate(CDR = total_deaths/total_pop) |> 
+  ggplot(aes(year, CDR, color = region)) + 
+  geom_line()
+
+total_pops |> 
+  left_join(total_deaths) |> 
+  mutate(CDR = total_deaths/total_pop) |> 
+  filter(year==2023)
+```
+
+# Population Pyramids
+
+Population age structures of Kenya and Canada in 2019:
+
+```{r}
+d_long <- d  |>  
+  pivot_longer(x0:x100, names_to = "age", values_to = "pop") |> 
+  mutate(age = as.numeric(str_remove(age, "x")))
+
+d_long|> 
+  filter(region=="Kenya"|region=="Canada", year == 2019)  |>  
+  mutate(population=ifelse(sex=="Male", -pop, pop)) |> 
+ggplot(aes(x = age, y = population, fill = sex)) + 
+  facet_wrap(~region)+
+  geom_bar(stat="identity")+
+  ggtitle("Population in each age group")+
+  ylab("Population")+
+  coord_flip() + 
+  scale_y_continuous(breaks = seq(-600, 600, 200), 
+                     labels = c(seq(600, 0, -200), seq(200, 600, 200))) + 
+  scale_fill_brewer(palette = "Set1") 
+ggsave(here("plots", "CAN_KEN_pyramid.pdf"))
+
+```
+
+Change in age structures over time:
+
+```{r}
+d_long |> 
+  filter(region=="Kenya"|region=="Canada", year%in% c(1960, 1990, 2015, 2020))  |>  
+  mutate(population=ifelse(sex=="Male", -pop, pop)) %>% 
+ggplot(aes(x = age, y = population, fill = sex)) + 
+  facet_grid(year~region)+
+  geom_bar(stat="identity")+
+  ggtitle("Population in each age group")+
+  ylab("Population")+
+  coord_flip() + 
+  scale_y_continuous(breaks = seq(-4000, 4000, 1000), 
+                      labels = c(seq(4000, 0, -1000), seq(1000, 4000, 1000))) + 
+  scale_fill_brewer(palette = "Set1") 
+ggsave(here("plots", "CAN_KEN_pyramid_time.pdf"))
+```
+
+# Age-specific rates
+
+Create and plot age-specific mortality rates (across both sexes)
+
+```{r}
+
+pops <- d_long 
+
+dm_long <- dm  |>  
+  pivot_longer(x0:x100, names_to = "age", values_to = "deaths") |> 
+  mutate(age = as.numeric(str_remove(age, "x")))
+
+# join these two tibbles and calculate rates
+
+asmr <- d_long |> 
+  left_join(dm_long) |> 
+  mutate(mx = deaths/pop)
+
+head(asmr)
+
+```
+Mortality rates for Canada
+
+```{r}
+asmr |> 
+  filter(region == "Canada", year %in% c(1960, 2023)) |> 
+  ggplot(aes(age, mx, color = sex)) + 
+  geom_line()+
+  scale_y_log10()+
+  facet_wrap(~year)+
+  labs(x ="Age- and sex-specific mortality rates for Canada")+
+  scale_color_brewer(palette = "Set1")
+ggsave(here("plots", "CAN_mortality.pdf"), width = 6, height = 4)
+```
+
+# Age-standardized rates
+
+What would Kenya mortality look like in 2023 with Canada's age structure?
+
+```{r}
+kenya_2023 <- asmr |> 
+  filter(year==2023, region=="Kenya")  |> 
+  rename(kpop = pop, kdeath = deaths, kmx = mx) |> 
+  select(-region)
+
+canada_2023 <- asmr |> 
+  ungroup() |> 
+  filter(year==2023, region=="Canada")  |> 
+  rename(cpop = pop, cdeath = deaths, cmx = mx) |> 
+  select(-region, -age, -year, -sex, -iso3_alpha_code)
+
+kc_2023 <- bind_cols(kenya_2023, canada_2023)
+
+# now calculate age-standardized rates using canada's population
+
+kc_2023  |>  
+  mutate(std_deaths_kenya = cpop*kmx,
+         std_deaths_canada = cpop*cmx) |> 
+  summarise(std_rate_kenya = sum(std_deaths_kenya)/sum(cpop),
+            std_rate_canada = sum(std_deaths_canada)/sum(cpop))
+
+```
+
+# Population Growth
+
+Plot Kenya total population over time
+
+```{r}
+d_long |> 
+  filter(region=="Kenya") |> 
+  group_by(year) |> 
+  summarize(pop = sum(pop)) |> 
+  ggplot(aes(year, pop)) + 
+  geom_line() + 
+  ggtitle("Kenya population over time")
+```
+What does the log look like?
+```{r}
+
+d_long |> 
+  filter(region=="Kenya") |> 
+  group_by(year) |> 
+  summarize(pop = sum(pop)) |> 
+  ggplot(aes(year, pop)) + 
+  geom_line() + 
+  ggtitle("Kenya population over time")+
+  scale_y_log10()
+ggsave(here("plots", "KEN_pop.pdf"))
+```
+
+Pretty straight! Let's calculate the growth rate from 1950 to 2023 This is just the slope of the logged graph. It's about 3% per year.  
+
+```{r}
+d_long |> 
+  filter(region=="Kenya") |> 
+  group_by(year) |> 
+  summarize(pop = sum(pop)) |> 
+  mutate(log_pop = log(pop))|> 
+  summarise(growth_rate = (log_pop[year==2023] - log_pop[year==1950])/(2023-1950))
+```
+
+What about Canada? About half that. 
+
+```{r}
+d_long |> 
+  filter(region=="Canada") |> 
+  group_by(year) |> 
+  summarize(pop = sum(pop)) |> 
+  mutate(log_pop = log(pop))|> 
+  summarise(growth_rate = (log_pop[year==2023] - log_pop[year==1950])/(2023-1950))
+```
+
+Some countries have stagnated:
+
+```{r}
+d_long |> 
+  filter(region=="Japan") |> 
+  group_by(year) |> 
+  summarize(pop = sum(pop)) |> 
+  ggplot(aes(year, pop)) + geom_line()+
+  scale_y_log10()+
+  ggtitle("Japan population (log scale) over time")
+```
+
+# Questions
+1. Pick two countries. Plot their population pyramids in 1960, 1990, and 2020.
+
+```{r}
+d_long |> 
+  filter(region=="Singapore"|region=="Ghana", year%in% c(1960, 1990, 2020))  |>  
+  mutate(population=ifelse(sex=="Male", -pop, pop)) %>% 
+ggplot(aes(x = age, y = population, fill = sex)) + 
+  facet_grid(year~region)+
+  geom_bar(stat="identity")+
+  ggtitle("Population in each age group")+
+  ylab("Population")+
+  coord_flip() + 
+  scale_y_continuous(breaks = seq(-4000, 4000, 1000), 
+                      labels = c(seq(4000, 0, -1000), seq(1000, 4000, 1000))) + 
+  scale_fill_brewer(palette = "Set1") 
+```
+
+
+2. Based on the shape and change in population pyramids in 1, do you think the population growth rate in each of your chosen countries is positive or negative in recent years?
+
+
+3. Confirm your guesses in 2 by plotting population over time in both countries. 
+
+```{r}
+d_long |> 
+  filter(region=="Singapore"|region=="Ghana") |> 
+  group_by(region, year) |> 
+  summarize(pop = sum(pop)) |> 
+  ggplot(aes(year, pop, color = region))+
+  geom_line()
+```
+
+4. Taking the US population in 2000 as the standard population, calculate the standardized mortality rates for US in 2023 and Australia in 2023. How much higher was the death rate in US compared to Australia?
+
+```{r}
+std_pop <- d_long |> 
+  filter(region == "United States of America", year == 2000) |> 
+  select(sex, age, pop) |> 
+  rename(std_pop = pop)
+
+asmr |> 
+  filter(region == "United States of America"| region == "Australia", year == 2023) |> 
+  left_join(std_pop) |> 
+  mutate(prod = mx*std_pop) |> 
+  group_by(region) |> 
+  summarize(asdr = sum(prod)/sum(std_pop))
+
+asmr |> 
+  filter(region == "United States of America"| region == "Australia", year == 2023) |> 
+  left_join(std_pop) |> 
+  mutate(prod = mx*std_pop) |> 
+  group_by(region) |> 
+  summarize(asdr = sum(prod)/sum(std_pop)) |> 
+  summarize(ratio = asdr[region=="United States of America"]/asdr[region == "Australia"])
+```
+
+
+
