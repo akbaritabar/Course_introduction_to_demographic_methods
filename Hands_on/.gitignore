@@ -2,6 +2,10 @@
 !*
 .Rhistory
 
+# excluding R profile, R project as students have to create these on their own
+.Rprofile
+03_MonicaALabs.Rproj
+
 # from: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
