@@ -10,7 +10,9 @@ Alexander, M. (2026). Advanced Data Analaysis course in Demographic Methods. Ret
 
 ## Data to download
 
-Below, I have included the lab session script names and the data files that you should download on your own as I could not upload them due to file size limits. Please note the version of data and year, in case they are updated.
+Below, I have included the lab session script names and the **data files that you should download on your own** as I could not upload them due to file size limits. Please note the version of data and year, in case they are updated.
+
+**Please note**: Include the downloaded files in the `data` folder as scripts read from there.
 
 ### "1_intro_edits.qmd"
 
