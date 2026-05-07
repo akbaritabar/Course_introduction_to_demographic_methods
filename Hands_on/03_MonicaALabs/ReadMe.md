@@ -8,6 +8,12 @@ Here is the folder where I will include a selection of Monica Alexander's lab co
 Alexander, M. (2026). Advanced Data Analaysis course in Demographic Methods. Retrieved April 8, 2026, from https://github.com/MJAlexander/soc6708
 ```
 
+## How to use the R project with RStudio
+
+1. Copy the content of this folder, `03_MonicaALabs`, into a folder on your laptop
+    - Preferably with a short path
+2. Then create a RStudio project or run the one I provide here
+
 ## Data to download
 
 Below, I have included the lab session script names and the **data files that you should download on your own** as I could not upload them due to file size limits. Please note the version of data and year, in case they are updated.
