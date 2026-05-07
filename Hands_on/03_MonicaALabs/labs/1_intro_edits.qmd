@@ -13,6 +13,10 @@ All these data come from the [UN World Population Prospects 2024](https://popula
 Packages:
 ```{r}
 # in the root of the project, i.e., "/Hands_on/03_MonicaALabs/" folder where "03_MonicaALabs.Rproj" is located, open it and, do `renv::init()`
+
+# You need to run the following line to install required packages.
+# install.packages(c("tidyverse", "here", "readxl", "janitor"))
+
 library(tidyverse)
 library(here)
 library(readxl)
