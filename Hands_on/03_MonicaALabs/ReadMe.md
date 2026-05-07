@@ -12,7 +12,7 @@ Alexander, M. (2026). Advanced Data Analaysis course in Demographic Methods. Ret
 
 1. Copy the content of this folder, `03_MonicaALabs`, into a folder on your laptop
     - Preferably with a short path
-2. Then create a RStudio project or run the one I provide here
+2. Then create a RStudio project or run the one I provided here
 
 ## Data to download
 
