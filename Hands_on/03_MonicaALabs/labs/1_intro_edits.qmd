@@ -25,11 +25,11 @@ library(janitor)
 
 Population data:
 ```{r}
-d_male <- read_xlsx("../data/WPP2024_POP_F01_2_POPULATION_SINGLE_AGE_MALE.xlsx", skip = 16, col_types = "text") |>
+d_male <- read_xlsx(here("data/WPP2024_POP_F01_2_POPULATION_SINGLE_AGE_MALE.xlsx"), skip = 16, col_types = "text") |>
   mutate(Year = as.numeric(Year))
 d_male$sex <- "Male"
 d_male <- d_male |> drop_na(Year)
-d_female <- read_xlsx("../data/WPP2024_POP_F01_3_POPULATION_SINGLE_AGE_FEMALE.xlsx", skip = 16, col_types = "text") |>
+d_female <- read_xlsx(here("data/WPP2024_POP_F01_3_POPULATION_SINGLE_AGE_FEMALE.xlsx"), skip = 16, col_types = "text") |>
   mutate(Year = as.numeric(Year))
 d_female$sex <- "Female"
 d_female <- d_female |> drop_na(Year)
