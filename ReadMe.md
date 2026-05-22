@@ -39,7 +39,3 @@ Akbaritabar
 Dear everyone, please see the guidelines about course's final examination here [./ZZZ_Final_examination/ReadMe.md](./ZZZ_Final_examination/ReadMe.md) .
 
 An example essay from my other course in the last semester is also included for your information.
-
-## List of topics for the final examination
-
-Please see here [./ZZZ_Final_examination/ReadMe.md](./ZZZ_Final_examination/ReadMe.md) the guidelines for final examination where I have now added the list of topics from which you can select one for your final essay and presentation.
