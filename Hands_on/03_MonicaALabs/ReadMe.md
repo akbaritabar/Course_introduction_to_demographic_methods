@@ -30,3 +30,11 @@ To run "1_intro_edits.qmd", you need to visit the **World Population Prospects 2
     1. "WPP2024_MORT_F01_2_DEATHS_SINGLE_AGE_MALE.xlsx"
     2. "WPP2024_MORT_F01_3_DEATHS_SINGLE_AGE_FEMALE.xlsx"
 
+### "4_fertility_edits.qmd"
+
+Files needed are from the **World Population Prospects 2024**. Visit this URL `https://population.un.org/wpp/downloads?folder=Standard%20Projections&group=CSV%20format`
+
+Select `standard projections`, then `CSV format`. Under `Fertility`, select `1950-2100, 5-year age groups (gz)` download the gzipped CSV. Unzip the CSV file in the data folder.
+
+Do the same under `Life Tables` and download the gzipped CSV for `1950-2023, medium (gz)` and then unzip the CSV file in the data folder.
+
