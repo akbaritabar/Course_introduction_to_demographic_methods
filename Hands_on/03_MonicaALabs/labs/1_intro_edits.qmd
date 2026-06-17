@@ -98,7 +98,7 @@ total_deaths <- dm  |>
 total_pops |> 
   left_join(total_deaths) |> 
   mutate(CDR = total_deaths/total_pop) |> 
-  ggplot(aes(year, CDR, color = region)) + 
+  ggplot(aes(x=year, y=CDR, color = region)) + 
   geom_line()
 
 total_pops |> 
