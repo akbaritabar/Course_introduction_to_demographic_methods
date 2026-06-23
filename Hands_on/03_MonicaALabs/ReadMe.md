@@ -38,3 +38,8 @@ Select `standard projections`, then `CSV format`. Under `Fertility`, select `195
 
 Do the same under `Life Tables` and download the gzipped CSV for `1950-2023, medium (gz)` and then unzip the CSV file in the data folder.
 
+
+### "5_pop_proj_edits.qmd"
+
+Same data files as those in the previous section, "4" is used here. Please download those and include in the `data` folder.
+

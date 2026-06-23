@@ -1,0 +1,7 @@
+# for data wrangling
+pandas
+pyarrow
+# for visualization
+plotnine
+# Lightweight IDE to use with Python
+jupyterlab
