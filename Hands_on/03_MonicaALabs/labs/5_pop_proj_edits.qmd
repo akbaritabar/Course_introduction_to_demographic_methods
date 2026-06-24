@@ -22,10 +22,14 @@ Loading in the data. For this lab we will need fertility rates, populations by a
 
 ```{r}
 df <- read_csv(here("data/WPP2024_Fertility_by_Age5.csv"))
-df <- df |> select(Location, Time, ASFR, AgeGrp)
+df <- df |> 
+  select(Location, Time, ASFR, AgeGrp)
 dl <- read_csv(here("data/WPP2024_Life_Table_Abridged_Medium_1950-2023.csv"))
-dl <- dl |> filter(Variant=="Medium", Sex=="Female")|> select(Location, Time, AgeGrp,Lx)
-d_female <- read_csv(here("data/wpp_pop_clean.csv")) |> filter(sex=="Female")
+dl <- dl |> 
+  filter(Variant=="Medium", Sex=="Female")|> 
+  select(Location, Time, AgeGrp,Lx)
+d_female <- read_csv(here("data/wpp_pop_clean.csv")) |> 
+  filter(sex=="Female")
 d_female <- d_female |> 
   pivot_longer(x0:x100) |> 
   mutate(age = as.numeric(str_remove(name, "x"))) 
@@ -45,7 +49,7 @@ d_female$age_group <-  cut(d_female$age, breaks = breaks, labels = labels, right
 1. pick two countries, 1 with high fertility and 1 with low fertility. Here are the options:
 
 ```{r}
-#unique(df$Location) 
+unique(df$Location) 
 # monica to do australia and zimbabwe
 ```
 
@@ -74,7 +78,7 @@ and the fraction female at birth is something like 0.4886.
 3. Create a Leslie matrix for each of your countries based on 2020 rates. The function below will help. This is pretty ugly so if someone want to rewrite it feel free :)
 
 Note: Fx only covers 10-50, but it needs to be 0 for all other age groups (probably easiest to `left_join` `df` to `dl` then replace the `NA` values with 0s).
-Note 2: From the WPP data we have a split first age group, but want to convert this into 0-5. Just sum the Lx values to get $_5L0$
+Note 2: From the WPP data we have a split first age group, but want to convert this into 0-5. Just sum the Lx values to get $_5L_0$
 
 ```{r}
 leslie <- function(nLx,

@@ -17,7 +17,7 @@ library(readxl)
 library(janitor)
 ```
 
-Read in WPP data (you will need to download the first two files from the UNPD website):
+Read in WPP data (you will need to download the first two files from the UNPD website). See the ReadMe in the `03_MonicaALabs` folder for links and download instructions.
 
 
 ```{r}
@@ -33,30 +33,31 @@ dp <- read_csv(here("data/wpp_pop_clean.csv"))
 Choose three countries in varying demographic stages and calculate and plot the NRR over time. Also plot population pyramids for these same countries (one recent, one from 1970) and discuss how population growth/decline and NRR are related. 
 
 ```{r}
-fx_mex <- df |> 
-  filter(Location == "Mexico", Variant == "Medium") |> 
-  select(Location, Time, AgeGrp, ASFR) |> 
-  mutate(ASFR = ASFR/1000)
+fx_mex <- df |>
+  filter(Location == "Mexico", Variant == "Medium") |>
+  select(Location, Time, AgeGrp, ASFR) |>
+  mutate(ASFR = ASFR / 1000)
 
-lx_mex <- dl |> 
-  filter(Location == "Mexico", Sex == "Female") |> 
-  select(Location, Time, AgeGrp, Lx) |> 
+lx_mex <- dl |>
+  filter(Location == "Mexico", Sex == "Female") |>
+  select(Location, Time, AgeGrp, Lx) |>
   mutate(Lx = Lx / 100000)
 
 ffab <- 0.4886
 
-nrrs <- fx_mex |> 
-  left_join(lx_mex) |> 
-  mutate(prod = ASFR*Lx) |> 
-  group_by(Time) |> 
-  summarize(NRR = sum(prod)*ffab) |> 
+nrrs <- fx_mex |>
+  left_join(lx_mex) |>
+  mutate(prod = ASFR * Lx) |>
+  group_by(Time) |>
+  summarize(NRR = sum(prod) * ffab) |>
   drop_na()
 
-nrrs |> 
-  ggplot(aes(Time, NRR)) + 
-  geom_line()+
-  labs(title = "NRR for Mexico")
+# from slides on fertility, page 41: "Note the n Lx refers to the survivorship of women."
 
+nrrs |>
+  ggplot(aes(Time, NRR)) +
+  geom_line() +
+  labs(title = "NRR for Mexico")
 ```
 
 
