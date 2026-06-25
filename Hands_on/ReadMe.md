@@ -17,6 +17,8 @@ Please check these R packages and resources on your own. Some could be very help
 - Riffe, T. (2025). DemoTools. https://timriffe.github.io/DemoTools/index.html
 - Riffe, T., Boe, C., Hilton, J., Goldstein, J., Holzman, S., & Yoo, S. H. (2025). HMDHFDplus: Read Human Mortality Database and Human Fertility Database Data from the Web (Version 2.0.8) [Computer software]. https://cran.r-project.org/web/packages/HMDHFDplus/index.html
 - Ševčíková, H., & Raftery, A. E. (2016). bayesPop: Probabilistic Population Projections. Journal of Statistical Software, 75, 1–29. https://doi.org/10.18637/jss.v075.i05
+- Theile  [aut, T., cre, cph, Alburez-Gutierrez, D., Snyder, M., & Calderón-Bernal, L. P. (2026). rsocsim: SOCSIM (Version 1.9.18) [Computer software]. https://cran.r-project.org/web/packages/rsocsim/index.html
 - Toolbox, A. D. (2025). AppliedDemogToolbox/applieddemogtoolbox.github.io [HTML]. https://github.com/AppliedDemogToolbox/applieddemogtoolbox.github.io (Original work published 2018)
 - USER GUIDE — Solving Actuarial Math with Python. (n.d.). Retrieved February 7, 2026, from https://actuarialmath-guide.readthedocs.io/en/latest/README.html
+- Williams, I., Alburez-Gutierrez, D., Song, X., & Hal, C. (2023). DemoKin: Estimate Population Kin Distribution (Version 1.0.3) [Computer software]. https://cran.r-project.org/web/packages/DemoKin/index.html
 - Yeung, J., Alexander, M., & Riffe, T. (2022). rcbayes: Estimate Rogers-Castro Migration Age Schedules with Bayesian Models (Version 0.2.0) [Computer software]. https://cran.r-project.org/web/packages/rcbayes/
