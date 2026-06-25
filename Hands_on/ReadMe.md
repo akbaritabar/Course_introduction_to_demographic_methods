@@ -7,6 +7,7 @@ Please check these R packages and resources on your own. Some could be very help
 - Acosta, E. (2019). Reproducible materials for “APC Curvature Plots: Displaying Nonlinear Age-Period-Cohort Patterns on Lexis Plots.” Demographic Research 41(42):1205–34 [Computer software]. OSF. https://osf.io/5bmyz/
 - Applied Demography Toolbox. (2026). https://applieddemogtoolbox.github.io/
 - Azose, J. J., & Raftery, A. E. (2015). Bayesian Probabilistic Projection of International Migration. Demography, 52(5), 1627–1650. https://doi.org/10.1007/s13524-015-0415-0
+- Crespo, C. A. (2024). Cacrespo/pylexis [Python]. https://github.com/cacrespo/pylexis (Original work published 2020)
 - Dudel, C. (2026). Christiandudel/dtms [R]. https://github.com/christiandudel/dtms (Original work published 2024)
 - Hyndman, R., Booth, H., Tickle, L., Maindonald, J., Wood, S., & R Core Team. (2025). demography: Forecasting Mortality, Fertility, Migration and Population Data (Version 2.0.1) [Computer software]. https://cran.r-project.org/web/packages/demography/index.html
 - Hyndman, R., Tang, S., McBain, M., & O’Hara-Wild, M. (2025). vital: Tidy Analysis Tools for Mortality, Fertility, Migration and Population Data (Version 2.0.1) [Computer software]. https://cran.r-project.org/web/packages/vital/index.html
