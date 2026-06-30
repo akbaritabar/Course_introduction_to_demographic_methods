@@ -55,7 +55,8 @@ d_female$age_group <-  cut(d_female$age, breaks = breaks, labels = labels, right
 1. pick two countries, 1 with high fertility and 1 with low fertility. Here are the options:
 
 ```{r}
-unique(df$Location) 
+# unique(df$Location) 
+# excluding as it prints a long list in PDF
 # monica to do australia and zimbabwe
 ```
 
@@ -175,7 +176,7 @@ dpop |>
 
 6. Project each population forward 200 years (i.e. 200/5 = 40 projection steps). For each country, you'll want to save every population for each age group and projection step in a matrix, and put the first column as your starting population. So something like this:
 
-```{r, eval=F}
+```{r, eval=T}
 
 # Project the female populations forward 200 years (40 steps of 5-year intervals)
 n <- 5
@@ -206,14 +207,14 @@ For the next bits, you probably want to take these two matrices and convert them
 
 ```{r, eval=T}
 # Convert projection matrices back to long format and compute age-group proportions
-Kdf <- as_tibble(K)
-colnames(Kdf) <- seq(from = 2020, to = (2020+n_projections*n), by = 5)
+Kdf <- as_tibble(K, .name_repair = "minimal")
+colnames(Kdf) <- seq(from = 2020, to = (2020 + n_projections * n), by = 5)
 Kdf <- cbind(age = seq(from = 0, to = 100, by = 5), Kdf)
 
-Kdf_long <- Kdf |> 
-  pivot_longer(-age, names_to = "year", values_to = "pop") |> 
-  group_by(year) |> 
-  mutate(prop = pop/sum(pop))
+Kdf_long <- Kdf |>
+  pivot_longer(-age, names_to = "year", values_to = "pop") |>
+  group_by(year) |>
+  mutate(prop = pop / sum(pop))
 
 # do the same for country 2
 
