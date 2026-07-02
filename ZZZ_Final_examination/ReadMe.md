@@ -6,12 +6,12 @@ Here is what we will do for the course's final assignment and examination.
 
 The examination will have 2 parts:
 
-1. A 10 minute presentation plus 5 minute discussion **during the final session** of our course.
+1. A **3** minute presentation plus 2 minute discussion **during the final session** of our course. I wish share my comments to everyone's feedback by email or if time allows, right after the talks.
 2. An essay with replication repository (with code, data, and materials) to prepare and upload up to **6 weeks after** the final session of the course.
 
 Select one of the topics covered in Wachter's book as the topic of your presentation and practical assignment and do as I describe below.
 
-In the course's final week on "Thu., 16/07/2026, 09:00 - 10:45", all students will give a 10 minute presentation about their selected topic and plans for the final essay, e.g., what question will your essay answer? What data will you use? What are related literature about the topic? In addition to the discussion with everyone, they will receive comments from me about their plans.
+In the course's final week on "Thu., 16/07/2026, 09:00 - 10:45", all students will give a **3** minute presentation about their selected topic and plans for the final essay, e.g., what question will your essay answer? What data will you use? What are related literature about the topic? In addition to the discussion with everyone, they will receive comments from me about their plans.
 
 For example, suppose a student selects the **"Mortality"** as the topic of their assignment. In that case, they will use the reading list for that week, search and find other literature, plus use the data sources and research questions that I discussed, and prepare their presentation and an example empirical analysis.
 
