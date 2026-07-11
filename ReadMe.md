@@ -37,6 +37,12 @@ Alexander, M. (2026). Advanced Data Analysis course in Demographic Methods. Retr
 Amaral, F. L. E. (2025). Demographic Methods. Retrieved April 30, 2026, from https://www.ernestoamaral.com/soci633-25spring.html
 ```
 
+To thank the community for their materials and in spirit of Open Science, I have also shared materials for my courses. You are welcome to use them in your teaching.
+
+1. [Course Introduction to Computational Social Science 2025](https://github.com/akbaritabar/Course-introduction-to-computational-social-science-2025)
+2. [Course Computational approaches to migration research, winter semester 2025-2026](https://github.com/akbaritabar/Course_computational_approaches_to_migration_research_2025_26)
+3. [Interactive Course on Basics of Git, GitHub, and Version Control](https://github.com/akbaritabar/Git-GitHub-Version-Control-Interactive-Self-paced-Course). 
+
 
 # Important announcements
 Here I will copy announcements (that are shared by email or posted on Stud.IP) so that everyone is informed about them.
