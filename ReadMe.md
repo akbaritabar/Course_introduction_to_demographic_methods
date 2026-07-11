@@ -41,7 +41,7 @@ To thank the community for their materials and in spirit of Open Science, I have
 
 1. [Course Introduction to Computational Social Science 2025](https://github.com/akbaritabar/Course-introduction-to-computational-social-science-2025)
 2. [Course Computational approaches to migration research, winter semester 2025-2026](https://github.com/akbaritabar/Course_computational_approaches_to_migration_research_2025_26)
-3. [Interactive Course on Basics of Git, GitHub, and Version Control](https://github.com/akbaritabar/Git-GitHub-Version-Control-Interactive-Self-paced-Course). 
+3. [Interactive Course on Basics of Git, GitHub, and Version Control](https://github.com/akbaritabar/Git-GitHub-Version-Control-Interactive-Self-paced-Course)
 
 
 # Important announcements
