@@ -57,12 +57,13 @@ Once you are finished, that should be by the handover deadline of **6 weeks afte
 This way, I can download (clone) your repository and access all the materials. Additionally, you show that you have learned how to create a repository and commit and push your materials to it.
 
 
-## Files to upload as your final essay
+## Checklist of files to upload as your final essay
 
 Please create a "private" GitHub repository as described above that includes at least these files:
 
-- Your codes and scripts
-- The data you used or links to download them (check that links are working. If not, upload the files to a Google Drive, NextCloud etc and include a download link in the materials)
-- Your final essay as PDF, and also include the plain text input file such as Latex text or Word document and similar.
-- Signed statement by the University where you clarify this work is done by you
-- Signed statement by Institute of Sociology and Demography (ISD) on use of artificial intelligence (AI, or KI in German). I have included this as a Word file, i.e., `20250521_KI-Statement_ISD.docx`. Include in the table the prompts you used and which parts of the text or materials are affected by it. While you can use AI "as an assistant", you are taking "full responsibility for the text and materials" and you have to check everything as it is considered your work and use of AI should be completely and transparently reported. I hope you will not need it and if so, use it only minimally as an assistant to improve some parts of the work.
+- [ ] Your codes and scripts
+- [ ] Slides of your presentation in the final week.
+- [ ] The data you used or links to download them (check that links are working. If not, upload the files to a Google Drive, NextCloud etc and include a download link in the materials)
+- [ ] Your final essay as PDF, and also include the plain text input file such as Latex text or Word document and similar.
+- [ ] Signed statement by the University where you clarify this work is done by you
+- [ ] Signed statement by Institute of Sociology and Demography (ISD) on use of artificial intelligence (AI, or KI in German). I have included this as a Word file, i.e., `20250521_KI-Statement_ISD.docx`. Include in the table the prompts you used and which parts of the text or materials are affected by it. While you can use AI "as an assistant", you are taking "full responsibility for the text and materials" and you have to check everything as it is considered your work and use of AI should be completely and transparently reported. I hope you will not need it and if so, use it only minimally as an assistant to improve some parts of the work.
