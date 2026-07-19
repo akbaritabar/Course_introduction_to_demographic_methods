@@ -183,7 +183,7 @@ ppr2_m |>
 ```
 
 ## Exercise
-child_age_2
+
 Repeat the graph above (PPR from 2 to 3, based on sex of first two children), but plot by age group of mother. Comment on observations in one sentence. 
 
 ```{r}
